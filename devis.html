@@ -1,217 +1,221 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devis</title>
 
-     <link rel="stylesheet" href="./src/css/output.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devis</title>
+
+  <link rel="stylesheet" href="./src/css/output.css">
 
 </head>
+
 <body>
-     <header>
-        <nav class="bg-[#134074] fixed top-0 w-full z-10 ">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <header>
+    <nav class="bg-[#134074] fixed top-0 w-full z-10 ">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <!-- Barre du haut -->
-                <div class="flex items-center justify-between h-16">
+        <!-- Barre du haut -->
+        <div class="flex items-center justify-between h-16">
 
-                    <!-- Logo -->
-                    <div class="flex items-center gap-3" aria-label="Page d'accueil du site">
-                        <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-                            <defs>
-                                <linearGradient id="grad-orange" x1="0" y1="0" x2="1" y2="1">
-                                    <stop offset="0%" stop-color="#FF6B00" />
-                                    <stop offset="100%" stop-color="#FFD580" />
-                                </linearGradient>
-                            </defs>
-                            <circle cx="16" cy="16" r="15" fill="url(#grad-orange)" />
-                            <circle cx="16" cy="16" r="7" fill="#ffffff" />
-                        </svg>
-                        <span class="text-lg lg:text-xl text-white font-semibold">WG Drone</span>
-                    </div>
+          <!-- Logo -->
+          <div class="flex items-center gap-3" aria-label="Page d'accueil du site">
+            <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+              <defs>
+                <linearGradient id="grad-orange" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FF6B00" />
+                  <stop offset="100%" stop-color="#FFD580" />
+                </linearGradient>
+              </defs>
+              <circle cx="16" cy="16" r="15" fill="url(#grad-orange)" />
+              <circle cx="16" cy="16" r="7" fill="#ffffff" />
+            </svg>
+            <span class="text-lg lg:text-xl text-white font-semibold">WG Drone</span>
+          </div>
 
-                    <!-- Menu desktop -->
-                    <div class="hidden md:flex items-center space-x-6">
-                        <a href="./index.html" class="text-white hover:bg-[#ff6b00] px-3 py-2 rounded-md">Accueil</a>
-                        <a href="./solutions.html"
-                            class="text-white hover:bg-[#ff6b00] px-3 py-2 rounded-md">Solutions</a>
-                        <a href="./tarifs.html" class="text-white hover:bg-[#ff6b00] px-3 py-2 rounded-md">Tarifs</a>
-                        <a href="./contact.html" class="text-white hover:bg-[#ff6b00] px-3 py-2 rounded-md">Contact</a>
-                    </div>
+          <!-- Menu desktop -->
+          <div class="hidden md:flex items-center space-x-6">
+            <a href="./index.html" class="text-white hover:bg-[#ff6b00] px-3 py-2 rounded-md">Accueil</a>
+            <a href="./solutions.html" class="text-white hover:bg-[#ff6b00] px-3 py-2 rounded-md">Solutions</a>
+            <a href="./tarifs.html" class="text-white hover:bg-[#ff6b00] px-3 py-2 rounded-md">Tarifs</a>
+            <a href="./contact.html" class="text-white hover:bg-[#ff6b00] px-3 py-2 rounded-md">Contact</a>
+          </div>
 
-                    <!-- Burger mobile -->
-                    <div class="md:hidden">
-                        <button type="button"
-                            class="inline-flex items-center justify-center p-1.5 rounded-md focus:outline-none"
-                            aria-controls="mobile-menu" aria-expanded="false" id="menu-button">
-                            <img src="./assets/img/icons8-menu-64.svg" alt="Menu burger icône"
-                                class="w-11 h-11 menu-icon" />
-                            <img src="./assets/img/icons8-croix.svg" alt="Fermer menu icône"
-                                class="w-8 h-8 text-white close-icon hidden" />
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Menu mobile (déroulant) -->
-            <div class="md:hidden hidden" id="mobile-menu">
-                <div class="flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-brand-blue">
-                    <a href="./index.html" class="block w-full text-white hover:text-[#ff6b00] px-3 py-2">Accueil</a>
-                    <a href="./solutions.html"
-                        class="block w-full text-white hover:text-[#ff6b00] px-3 py-2">Solutions</a>
-                    <a href="./tarifs.html" class="block w-full text-white hover:text-[#ff6b00] px-3 py-2">Tarifs</a>
-                    <a href="./contact.html" class="block w-full text-white hover:text-[#ff6b00] px-3 py-2">Contact</a>
-                </div>
-            </div>
-
-        </nav>
-    </header>
-
-     <div  class="pt-24">
-        <h1 class="max-w-6xl mx-auto bg-[#134074] py-6 text-white text-4xl text-center  rounded-md font-semibold">
-           Demande de  Devis</h1>
-    </div>
-
-
-<section class="bg-[eef4ed]">
-   <form action="submit_devis.php" method="POST" class="max-w-lg mx-auto p-2 space-y-6 rounded shadow text-[#134074]">
-
-  <!-- Infos client -->
-  <div>
-    <label for="nom" class="block font-semibold mb-1">Nom *</label>
-    <input type="text" name="nom" id="nom" required class="w-full rounded border px-3 py-2" />
-  </div>
-
-  <div>
-    <label for="prenom" class="block font-semibold mb-1">Prénom *</label>
-    <input type="text" name="prenom" id="prenom" required class="w-full rounded border px-3 py-2" />
-  </div>
-
-  <div>
-    <label for="email" class="block font-semibold mb-1">Email *</label>
-    <input type="email" name="email" id="email" required class="w-full rounded border px-3 py-2" />
-  </div>
-
-  <div>
-    <label for="telephone" class="block font-semibold mb-1">Téléphone</label>
-    <input type="tel" name="telephone" id="telephone" class="w-full rounded border px-3 py-2" />
-  </div>
-
-  <!-- Infos devis -->
-  <div>
-    <label for="surface_toiture" class="block font-semibold mb-1">Surface toiture (m²)</label>
-    <input type="number" name="surface_toiture" id="surface_toiture" step="0.01" min="0" class="w-full rounded border px-3 py-2" />
-  </div>
-
-  <div>
-    <label for="surface_facade" class="block font-semibold mb-1">Surface façade (m²)</label>
-    <input type="number" name="surface_facade" id="surface_facade" step="0.01" min="0" class="w-full rounded border px-3 py-2" />
-  </div>
-
-   <div>
-    <label for="surface_panneaux" class="block font-semibold mb-1">Surface de Panneaux Solaire (m²)</label>
-    <input type="number" name="surface_panneaux" id="surface_panneaux" step="0.01" min="0" class="w-full rounded border px-3 py-2" />
-  </div>
-
-  <div>
-    <label for="hauteur" class="block font-semibold mb-1">Hauteur (m)</label>
-    <input type="number" name="hauteur" id="hauteur" step="0.01" min="0" class="w-full rounded border px-3 py-2" />
-  </div>
-
-  <div>
-    <label for="emplacement" class="block font-semibold mb-1">Emplacement</label>
-    <select name="emplacement" id="emplacement" class="w-full rounded border px-3 py-2">
-      <option value="">-- Sélectionnez --</option>
-      <option value="urbain">Urbain</option>
-      <option value="extra-urbain">Extra-urbain</option>
-      <option value="rural">Rural</option>
-    </select>
-  </div>
-
-  <div>
-    <label for="materiau" class="block font-semibold mb-1">Matériau</label>
-    <input type="text" name="materiau" id="materiau" class="w-full rounded border px-3 py-2" placeholder="ex: brique, béton, bois..." />
-  </div>
-
-  <div>
-    <label for="accessibilite" class="block font-semibold mb-1">Accessibilité</label>
-    <input type="text" name="accessibilite" id="accessibilite" class="w-full rounded border px-3 py-2" placeholder="ex: échafaudage, échelle, libre..." />
-  </div>
-
-  <div>
-    <label for="description" class="block font-semibold mb-1">Description / commentaires</label>
-    <textarea name="description" id="description" rows="4" class="w-full rounded border px-3 py-2"></textarea>
-  </div>
-
-  <button type="submit" class="w-full bg-[#134074] text-white py-3 rounded hover:bg-brand-orange transition">
-    Envoyer ma demande de devis
-  </button>
-</form>
-</section>
-  <footer class="mt-6">
-
-        <div
-            class="py-3 grid grid-cols-1 lg:flex justify-between items-center px-3 gap-6 md:gap-8 lg:gap-12 bg-[#134074] text-white ">
-            <!-- Colonne gauche : logo + droits + flèche (desktop/tablette) -->
-            <div>
-                <a class="flex items-center gap-3 ml-3" href="index.html">
-                    <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="grad-orange" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#FF6B00" />
-                                <stop offset="100%" stop-color="#FFD580" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="16" cy="16" r="15" fill="url(#grad-orange)" />
-                        <circle cx="16" cy="16" r="7" fill="#ffffff" />
-                    </svg>
-                    <span class="">WG Drone</span>
-                </a>
-                <p class="ml-4">© 2025 - Tous droits réservés</p>
-            </div>
-            <!-- Flèche retour : visible en ≥ md -->
-            <div class="flex justify-center flex-item-center gp-3">
-                <a href="./index.html" class="mx-6 mt-1  hover:opacity-75 transition" aria-label="Retour accueil">
-                    <img src="/assets/img/icons8-flèche-gauche-50.png" alt="Retour accueil" width="40">
-                </a>
-
-
-                <!-- Colonne centre : réseaux + flèche (mobile seulement) -->
-
-
-                <!-- Flèche retour : visible en < md -->
-                <a href="#" class="mt-1 hover:opacity-75 transition  "><img src="/assets/img/icons8-linkedin-48.png"
-                        alt="LinkedIn" width="40"></a>
-                <a href="#" class=" hover:opacity-75 transition"><img src="/assets/img/icons8-facebook-50.png"
-                        alt="Facebook" width="40"></a>
-                <a href="#" class="mt-1  hover:opacity-75 transition"><img src="/assets/img/icons8-instagram-50.png"
-                        alt="Instagram" width="40"></a>
-            </div>
-
-
-            <!-- Colonne droite : liens -->
-            <div class="">
-                <ul class="ml-3 ">
-                    <li><a href="/contact.html" class="hover:opacity-75 transition  ">CONTACT</a></li>
-                    <li><a href="/contact.html" class="hover:opacity-75 transition  ">FAQ</a></li>
-                    <li><a href="/mentions-legales.html" class=" hover:opacity-75 transition  ">MENTIONS LÉGALES</a>
-                    </li>
-                    <li><a href="/cgu-cgv.html" class="hover:opacity-75 transition  ">CONDITIONS
-                            GÉNÉRALES DE VENTE</a></li>
-                </ul>
-            </div>
-
+          <!-- Burger mobile -->
+          <div class="md:hidden">
+            <button type="button" class="inline-flex items-center justify-center p-1.5 rounded-md focus:outline-none"
+              aria-controls="mobile-menu" aria-expanded="false" id="menu-button">
+              <img src="./assets/img/icons8-menu-64.svg" alt="Menu burger icône" class="w-11 h-11 menu-icon" />
+              <img src="./assets/img/icons8-croix.svg" alt="Fermer menu icône"
+                class="w-8 h-8 text-white close-icon hidden" />
+            </button>
+          </div>
 
         </div>
+      </div>
 
-    </footer>
+      <!-- Menu mobile (déroulant) -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-brand-blue">
+          <a href="./index.html" class="block w-full text-white hover:text-[#ff6b00] px-3 py-2">Accueil</a>
+          <a href="./solutions.html" class="block w-full text-white hover:text-[#ff6b00] px-3 py-2">Solutions</a>
+          <a href="./tarifs.html" class="block w-full text-white hover:text-[#ff6b00] px-3 py-2">Tarifs</a>
+          <a href="./contact.html" class="block w-full text-white hover:text-[#ff6b00] px-3 py-2">Contact</a>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <div class="pt-24">
+    <h1 class="max-w-6xl mx-auto bg-[#134074] py-6 text-white text-4xl text-center  rounded-md font-semibold">
+      Demande de Devis</h1>
+  </div>
+
+
+  <section class="bg-[eef4ed]">
+    <form action="process_devis.php" method="POST" class="max-w-lg mx-auto p-2 space-y-6 rounded shadow text-[#134074]">
+
+      <!-- Infos client -->
+      <div>
+        <label for="nom" class="block font-semibold mb-1">Nom *</label>
+        <input type="text" name="nom" id="nom" required class="w-full rounded border px-3 py-2" />
+      </div>
+
+      <div>
+        <label for="prenom" class="block font-semibold mb-1">Prénom *</label>
+        <input type="text" name="prenom" id="prenom" required class="w-full rounded border px-3 py-2" />
+      </div>
+
+      <div>
+        <label for="email" class="block font-semibold mb-1">Email *</label>
+        <input type="email" name="email" id="email" required class="w-full rounded border px-3 py-2" />
+      </div>
+
+      <div>
+        <label for="telephone" class="block font-semibold mb-1">Téléphone</label>
+        <input type="tel" name="telephone" id="telephone" class="w-full rounded border px-3 py-2" />
+      </div>
+
+      <!-- Infos devis -->
+      <div>
+        <label for="surface_toiture" class="block font-semibold mb-1">Surface toiture (m²)</label>
+        <input type="number" name="surface_toiture" id="surface_toiture" step="0.01" min="0"
+          class="w-full rounded border px-3 py-2" />
+      </div>
+
+      <div>
+        <label for="surface_facade" class="block font-semibold mb-1">Surface façade (m²)</label>
+        <input type="number" name="surface_facade" id="surface_facade" step="0.01" min="0"
+          class="w-full rounded border px-3 py-2" />
+      </div>
+
+      <div>
+        <label for="surface_panneaux" class="block font-semibold mb-1">Surface de Panneaux Solaire (m²)</label>
+        <input type="number" name="surface_panneaux" id="surface_panneaux" step="0.01" min="0"
+          class="w-full rounded border px-3 py-2" />
+      </div>
+
+      <div>
+        <label for="hauteur" class="block font-semibold mb-1">Hauteur (m)</label>
+        <input type="number" name="hauteur" id="hauteur" step="0.01" min="0" class="w-full rounded border px-3 py-2" />
+      </div>
+
+      <div>
+        <label for="emplacement" class="block font-semibold mb-1">Emplacement</label>
+        <select name="emplacement" id="emplacement" class="w-full rounded border px-3 py-2">
+          <option value="">-- Sélectionnez --</option>
+          <option value="urbain">Urbain</option>
+          <option value="extra-urbain">Extra-urbain</option>
+          <option value="rural">Rural</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="materiau" class="block font-semibold mb-1">Matériau</label>
+        <input type="text" name="materiau" id="materiau" class="w-full rounded border px-3 py-2"
+          placeholder="ex: brique, béton, bois..." />
+      </div>
+
+      <div>
+        <label for="accessibilite" class="block font-semibold mb-1">Accessibilité</label>
+        <input type="text" name="accessibilite" id="accessibilite" class="w-full rounded border px-3 py-2"
+          placeholder="ex: échafaudage, échelle, libre..." />
+      </div>
+
+      <div>
+        <label for="description" class="block font-semibold mb-1">Description / commentaires</label>
+        <textarea name="description" id="description" rows="4" class="w-full rounded border px-3 py-2"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-[#134074] text-white py-3 rounded hover:bg-brand-orange transition">
+        Envoyer ma demande de devis
+      </button>
+    </form>
+  </section>
+  <footer class="mt-6">
+
+    <div
+      class="py-3 grid grid-cols-1 lg:flex justify-between items-center px-3 gap-6 md:gap-8 lg:gap-12 bg-[#134074] text-white ">
+      <!-- Colonne gauche : logo + droits + flèche (desktop/tablette) -->
+      <div>
+        <a class="flex items-center gap-3 ml-3" href="index.html">
+          <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+            <defs>
+              <linearGradient id="grad-orange" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#FF6B00" />
+                <stop offset="100%" stop-color="#FFD580" />
+              </linearGradient>
+            </defs>
+            <circle cx="16" cy="16" r="15" fill="url(#grad-orange)" />
+            <circle cx="16" cy="16" r="7" fill="#ffffff" />
+          </svg>
+          <span class="">WG Drone</span>
+        </a>
+        <p class="ml-4">© 2025 - Tous droits réservés</p>
+      </div>
+      <!-- Flèche retour : visible en ≥ md -->
+      <div class="flex justify-center flex-item-center gp-3">
+        <a href="./index.html" class="mx-6 mt-1  hover:opacity-75 transition" aria-label="Retour accueil">
+          <img src="assets/img/icons8-flèche-gauche-50.png" alt="Retour accueil" width="40">
+        </a>
+
+
+        <!-- Colonne centre : réseaux + flèche (mobile seulement) -->
+
+
+        <!-- Flèche retour : visible en < md -->
+        <a href="#" class="mt-1 hover:opacity-75 transition  "><img src="assets/img/icons8-linkedin-48.png"
+            alt="LinkedIn" width="40"></a>
+        <a href="#" class=" hover:opacity-75 transition"><img src="assets/img/icons8-facebook-50.png" alt="Facebook"
+            width="40"></a>
+        <a href="#" class="mt-1  hover:opacity-75 transition"><img src="assets/img/icons8-instagram-50.png"
+            alt="Instagram" width="40"></a>
+      </div>
+
+
+      <!-- Colonne droite : liens -->
+      <div class="">
+        <ul class="ml-3 ">
+          <li><a href="/contact.html" class="hover:opacity-75 transition  ">CONTACT</a></li>
+          <li><a href="/contact.html" class="hover:opacity-75 transition  ">FAQ</a></li>
+          <li><a href="/mentions-legales.html" class=" hover:opacity-75 transition  ">MENTIONS LÉGALES</a>
+          </li>
+          <li><a href="/cgu-cgv.html" class="hover:opacity-75 transition  ">CONDITIONS
+              GÉNÉRALES DE VENTE</a></li>
+        </ul>
+      </div>
+
+
+    </div>
+
+  </footer>
 
 
 
- <script src="index.js"></script>
+  <script src="index.js"></script>
 
-    
+
 </body>
+
 </html>
