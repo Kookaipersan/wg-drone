@@ -34,4 +34,5 @@ $stmt->execute([
 
 // Rediriger ou afficher un message
 echo "Merci $prenom, votre message a bien été envoyé !";
+echo '<p><a href="index.html">Retour à l\'accueil</a></p>';
 ?>

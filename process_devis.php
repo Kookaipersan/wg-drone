@@ -19,6 +19,10 @@ if ($email === '' || $nom === ''  || $prenom === '') {
     die('Veuillez remplir tous les champs obligatoire.');
 }
 
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    die('email invalide.');
+}
+
 $sql = "SELECT id FROM clients WHERE email = :email";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([':email' => $email]);
@@ -55,5 +59,6 @@ $stmt->execute([
 
 ]);
 
-echo "Votre demande de devis a bien été enregistrée, Nous vous contacterons bientôt.";
+echo "<p>Merci <strong>$prenom</strong>, votre demande de devis a bien été enregistrée. Nous vous contacterons bientôt.</p>";
+echo '<p><a href="index.html">Retour à l\'accueil</a></p>';
 ?>

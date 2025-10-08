@@ -19,3 +19,6 @@ try {
     // En cas d’erreur, afficher un message et arrêter le script
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
+
+
+
