@@ -15,6 +15,8 @@ $materiau = trim($_POST['materiau']  ?? null);
 $accessibilite = trim($_POST['accessibilite']  ?? null);
 $description = trim($_POST['description']  ?? null);
 
+try{
+
 if ($email === '' || $nom === ''  || $prenom === '') {
     die('Veuillez remplir tous les champs obligatoire.');
 }
@@ -22,6 +24,12 @@ if ($email === '' || $nom === ''  || $prenom === '') {
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     die('email invalide.');
 }
+
+foreach (['surface_toiture', 'surface_facade', 'surface_panneaux', 'hauteur'] as $field) {
+        if ($$field !== null && (!is_numeric($$field) || $$field < 0)) {
+            die(ucfirst(str_replace('_', ' ', $field)) . ' invalide.');
+        }
+    }
 
 $sql = "SELECT id FROM clients WHERE email = :email";
 $stmt = $pdo->prepare($sql);
@@ -59,6 +67,13 @@ $stmt->execute([
 
 ]);
 
-echo "<p>Merci <strong>$prenom</strong>, votre demande de devis a bien été enregistrée. Nous vous contacterons bientôt.</p>";
-echo '<p><a href="index.html">Retour à l\'accueil</a></p>';
+header('Location: merci_devis.php');
+exit;
+
+} catch (PDOException $e) {
+    echo "Une erreur est survenue. Merci de réessayer plus tard.";
+    error_log($e->getMessage());
+    exit;
+}
+
 ?>
