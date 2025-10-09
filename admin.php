@@ -95,4 +95,7 @@ $messages = $stmt_messages->fetchAll();
                 <?php endforeach; ?>
         </tbody>
     </table>
+<div class="mt-10">
+    <a href="logout.php" class="btn-logout bg-[#134074] py-2 px-3  text-white rounded-md">Déconnexion</a>
 
+</div>

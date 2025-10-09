@@ -2,16 +2,22 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CGU-CGV</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WG Drone</title>
 
+
+
+    <!-- Police Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ton CSS -->
 
     <link rel="stylesheet" href="./src/css/output.css">
 
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
     <header>
         <nav class="bg-[#134074] fixed top-0 w-full z-10 ">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,97 +77,125 @@
 
         </nav>
     </header>
-    <div class="pt-24 px-4 sm:px-8 md:px-20 lg:px-32 text-[#134074]">
-        <div class="max-w-6xl mx-auto">
-            <h1 class="bg-[#134074] py-6 text-white text-3xl md:text-4xl text-center rounded-md font-semibold">
-                Conditions Générales d'utilisation et de vente <br>WG Drone
-            </h1>
+    <main class="flex-grow">
 
-            <div class="mt-8 space-y-6 leading-relaxed">
-                <ol class="list-decimal pl-5 space-y-6">
-                    <li>
-                        <span class="font-bold text-lg">Objet :</span>
-                        <p class="mt-2">
-                            Les présentes conditions définissent les règles d'utilisation du site WG Drone ainsi que
-                            les modalités de prestation de service de nettoyage de toitures, façades et panneaux
-                            solaires par drone. <br> En accèdant au site ou en sollicitant un devis, l'utilisateur
-                            accepte
-                            sans réserve ces conditions. </p>
-                    </li>
+        <section class="max-w-6xl mx-auto p-6  pt-24 text-[#134074] font-semibold">
+            <h1 class="text-3xl font-bold mb-6 py-6 text-center text-white bg-[#134074] rounded-md">Foire Aux Questions
+                (FAQ)</h1>
 
-                    <li class="py-4"><span class="font-bold text-lg">Services proposés</span>
-                        <p>WG Drone propose : </p>
-                        <ul class="list-disc list-inside">
-                            <li><strong>Nettoyage de toitures,</strong></li>
-                            <li><strong>Nettoyage de façades,</strong></li>
-                            <li><strong>Nettoyage de panneaux solaires.</strong> <br>
-                                au moyen de drones professionnels adaptés.</li>
-                        </ul>
-                        <p>Les prestations sont réalisées dans le respect des normes de sécurité et de la législation en
-                            vigueur
-                            sur l'usage des drones.
-                        </p>
-                    </li>
-
-
-                    <li class="list-decimal py-2"><span class="font-bold text-lg">Demande de devis et commande</span>
-                    </li>
-                    <ul class="list-disc list-inside">
-                        <li>Toute demande passe par le formulaire de contact ou par téléphone.</li>
-                        <li>Un devis gratuit est transmis au client précisant la nature de l'intervention,
-                            le prix et les conditions d'éxecution.</li>
-                        <li>La commande est validée uniquement après acceptation écrite du devis par le client.</li>
-                    </ul>
-
-                    <li class="list-decimal py-2"><span class="font-bold text-lg">Prix et modalités de paiement</span>
-                    </li>
-                    <ul class="list-disc list-inside">
-                        <li>Les tarifs sont exprimés en euros TTC.</li>
-                        <li>Le paiement peut s'effectuer par virement bancaire, chèque ou espèce (selon accord).</li>
-                        <li>Un acompte pourra être demandé à la commande</li>
-                    </ul>
-
-
-                    <li class="list-decimal py-2 "><span class="font-bold text-lg">Réalisation des prestations</span>
-                    </li>
-                    <ul class="list-disc list-inside">
-                        <li>WG Drone s'engage à réaliser les prestations conformément au devis validé</li>
-                        <li>L'accès au site du client doit être sécuriséet dégagé afin de permettre l'intervention</li>
-                        <li>En cas d'impossibililé technique (méteo défavorable, sécurité non assurée) WG Drone se
-                            réserve
-                            le droit de reporter l'intervention. </li>
-                    </ul>
-
-                    <li class="list-decimal py-2"><span class="font-bold text-lg">Responsabilités</span></li>
-                    <ul class="list-disc list-inside ">
-                        <li>WG Drone dispose d'une assurance professionnelle couvrant les interventions par drone.</li>
-                        <li>Le client est responsable de la bonne accessibilité au site (toiture, façade, panneaux).
-                        </li>
-                        <li>WG Drone ne saurait être tenu responsable des dommages résultantd'un mauvais entretien
-                            préalable
-                            ou d'un défaut de structure du bâtiment. </li>
-                    </ul>
-
-                    <li class="list-decimal py-2"><span class="font-bold text-lg">Données personnelles</span>
-                        <p>Conformément au RGPD, les données collectées (nom, email, téléphone, adresse) servent
-                            uniquement à
-                            l'établissement de devis et au suivi des prestations. <br>
-                            Le client peut à tout moment demander la suppression de ses données en écrivant à [mail].
-                        </p>
-                    </li>
-
-                    <li class="list-decimal py-2"><span class="font-bold text-lg">Droit applicable</span>
-                        <p>Les présentes CGU/CGV sont régies par le droit français. <br>
-                            En cas de litige, une solution à l'amiable sera recherchée avant toute procédure judiciaire.
-                        </p>
-                    </li>
-
-                </ol>
-
+            <div>
+                <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+                    onclick="toggleAccordion(this)">
+                    Quand faut-il nettoyer sa toiture ?
+                </button>
+                <div class="hidden px-4 py-2 text-gray-700 bg-gray-50 rounded-b-md">
+                    Il est conseillé de nettoyer la toiture au moins une fois par an pour éviter les mousses et lichens.
+                </div>
             </div>
-        </div>
 
-    </div>
+            <div>
+                <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+                    onclick="toggleAccordion(this)">
+                    Quelle est la différence entre un nettoyage traditionnel et un nettoyage par drone ?
+                </button>
+                <div class="hidden px-4 py-2 text-gray-700 bg-gray-50 rounded-b-md">
+                    Le nettoyage par drone est plus rapide, moins coûteux et évite l’utilisation d’échafaudages, tout en
+                    assurant une qualité professionnelle.
+                </div>
+            </div>
+
+            <div>
+                <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+                    onclick="toggleAccordion(this)">
+                    Combien de temps dure une intervention ?
+                </button>
+                <div class="hidden px-4 py-2 text-gray-700 bg-gray-50 rounded-b-md">
+                    Une intervention standard dure généralement entre 1 et 3 heures selon la surface et la complexité du site.
+                </div>
+            </div>
+
+            <div>
+                <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+                    onclick="toggleAccordion(this)">
+                    Quels produits utilisez-vous ?
+                </button>
+                <div class="hidden px-4 py-2 text-gray-700 bg-gray-50 rounded-b-md">
+                    Nous utilisons des produits écologiques spécialement formulés pour protéger vos surfaces tout en
+                    éliminant
+                    mousses et salissures.
+                </div>
+            </div>
+
+            <div>
+                <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+                    onclick="toggleAccordion(this)">
+                    Le nettoyage par drone est-il bruyant ?
+                </button>
+                <div class="hidden px-4 py-2 text-gray-700 bg-gray-50 rounded-b-md">
+                    Non, les drones utilisés sont silencieux et n'occasionnent pas de nuisance sonore importante.
+                </div>
+            </div>
+
+            <div>
+                <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+                    onclick="toggleAccordion(this)">
+                    Quelle est la hauteur maximale d’intervention ?
+                </button>
+                <div class="hidden px-4 py-2 text-gray-700 bg-gray-50 rounded-b-md">
+                    Nos drones peuvent intervenir jusqu'à une hauteur de 30 mètres, adaptée à la plupart des toitures et
+                    façades.
+                </div>
+            </div>
+
+            <div>
+                <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+                    onclick="toggleAccordion(this)">
+                    Faut-il couper l’électricité lors de l’intervention ?
+                </button>
+                <div class="hidden px-4 py-2 text-gray-700 bg-gray-50 rounded-b-md">
+                    Non, aucune coupure d’électricité n’est nécessaire pour une intervention de nettoyage par drone.
+                </div>
+            </div>
+
+            <div>
+                <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+                    onclick="toggleAccordion(this)">
+                    Que faire en cas de mauvais temps ?
+                </button>
+                <div class="hidden px-4 py-2 text-gray-700 bg-gray-50 rounded-b-md">
+                    En cas de mauvais temps, l’intervention est reportée à une date ultérieure pour garantir la sécurité
+                    et la qualité.
+                </div>
+            </div>
+
+            <div>
+                <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+                    onclick="toggleAccordion(this)">
+                    Comment se déroule une intervention par drone ?
+                </button>
+                <div class="hidden px-4 py-2 text-gray-700 bg-gray-50 rounded-b-md">
+                    Un pilote qualifié télécommande le drone pour nettoyer efficacement les surfaces ciblées sans
+                    endommager.
+                </div>
+            </div>
+
+            <div>
+                <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
+                    onclick="toggleAccordion(this)">
+                    Comment puis-je obtenir un devis personnalisé ?
+                </button>
+                <div class="hidden px-4 py-2 text-gray-700 bg-gray-50 rounded-b-md">
+                    Contactez-nous via notre formulaire de demande de devis en ligne ou par téléphone, nous vous
+                    répondrons
+                    rapidement.
+                </div>
+            </div>
+
+
+        </section>   
+
+    </main>
+
     <footer class="mt-6">
 
         <div
@@ -219,15 +253,12 @@
         </div>
 
     </footer>
-
-
-
-
-
-
-
-
-
+     <script>
+            function toggleAccordion(button) {
+                const content = button.nextElementSibling;
+                content.classList.toggle('hidden');
+            }
+        </script>
 
     <script src="index.js"></script>
 
