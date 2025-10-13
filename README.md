@@ -18,11 +18,7 @@ Ce projet inclus une interface utilisateur , un système de gestion de devis et 
 
 1- Cloner le dépôt :
 '''bash
-<<<<<<< HEAD
 git clone https://github.com/Kookaipersan/wg-drone.git
-=======
-git clone https://guthub.com/Kookaipersan/wg-drone.git
->>>>>>> 895907611b9553a65bc4866486b0530815461966
 2- Pacr le projet dans Ht-docs de XAMPP.
 3- Importer la base de données MySQL via phpMyAdmin.
 4- Configurer le fichier db.php avec les identifiants Mysql
