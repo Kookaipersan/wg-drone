@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Merci pour votre demande de devis</title>
-    <link rel="stylesheet" href="src/css/output.css"> <!-- ou ton fichier CSS -->
+    <link rel="stylesheet" href="src/css/output.css"> 
 </head>
 <body>
     <div class="max-w-xl mx-auto p-6 text-center">

@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="./src/css/output.css">
 </head>
 <body>
-    <header>
-        <!-- ici tu remets ta barre de navigation -->
-    </header>
+   
 
     <main class="max-w-4xl mx-auto mt-20 p-8 text-center">
         <h1 class="text-3xl font-bold text-green-700 mb-4">Merci pour votre message !</h1>
@@ -16,8 +14,5 @@
         <a href="index.html" class="mt-8 inline-block bg-[#134074] text-white py-2 px-6 rounded hover:bg-[#ff6b00]">Retour à l'accueil</a>
     </main>
 
-    <footer>
-        <!-- ton footer -->
-    </footer>
 </body>
 </html>

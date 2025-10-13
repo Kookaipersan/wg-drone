@@ -1,31 +1,42 @@
 <?php
+
+// Démarrage de la session PHP pour gérer l'état de connexion
 session_start();
 
-require_once 'db.php'; // ta connexion PDO, adapte le chemin si besoin
+// Inclusion du fichier de connexion à la base de données PDO
+require_once 'db.php'; 
 
 // Si admin déjà connecté, redirige vers admin.php
 if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
-    header('Location: admin.php');
-    exit;
+    header('Location: admin.php');  // Redirection vers admin.php
+    exit;                           // Stopper l’exécution du script après redirection
 }
 
-$error = '';
 
+$error = '';  // Initialisation d’une variable pour stocker les messages d’erreur
+
+// Vérifie si le formulaire a été soumis en méthode POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
+    // Récupération sécurisée des valeurs du formulaire (identifiant et mot de passe)
+    $username = $_POST['username'] ?? '';  // Récupère le username ou chaîne vide si absent
+    $password = $_POST['password'] ?? '';  // Récupère le password ou chaîne vide si absent
 
     // Requête pour chercher l'admin dans la base
     $sql = "SELECT * FROM admins WHERE username = :username";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([':username' => $username]);
-    $admin = $stmt->fetch();
+    $stmt = $pdo->prepare($sql);                               // Prépare la requête pour éviter injection SQL
+    $stmt->execute([':username' => $username]);                // Exécute la requête avec la valeur de l’utilisateur
+    $admin = $stmt->fetch();                                   // Récupère la ligne de résultat (ou false si aucun)
 
+
+    // Vérifie si un admin a été trouvé et si le mot de passe saisi correspond au hash stocké
     if ($admin && password_verify($password, $admin['password'])) {
+     // Si authentification réussie, création d’une session indiquant que l’admin est connecté   
         $_SESSION['admin_logged_in'] = true;
+        // Redirection vers la page admin sécurisée
         header('Location: admin.php');
-        exit;
+        exit;   // On arrête le script après redirection
     } else {
+        // Sinon, message d’erreur pour informer que les identifiants sont incorrects
         $error = 'Identifiant ou mot de passe incorrect.';
     }
 }
@@ -46,8 +57,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
+    <!-- Formulaire de connexion administrateur -->
     <form method="POST" action="">
         <h2>Connexion Administrateur</h2>
+         <!-- Affiche un message d'erreur si $error est défini -->
         <?php if ($error): ?>
             <div class="error"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>

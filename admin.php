@@ -2,7 +2,7 @@
 
 require 'db.php';
 
-//AUTHETIFICATION
+// Vérification si l'administrateur est connecté, sinon redirection vers la page de login
 
 session_start();
 if(!isset($_SESSION ['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
@@ -10,7 +10,7 @@ if(!isset($_SESSION ['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
     exit;
 }
 
-//RECUPERATION DES DEVIS 
+// Récupération de la liste des devis avec les informations clients associées 
 $sql = "SELECT d.*, c.nom, c.prenom, c.email, c.telephone
 FROM devis d
 JOIN clients c ON d.client_id = c.id
@@ -19,7 +19,7 @@ ORDER BY d.date_demande DESC";
 $stmt = $pdo->query($sql);
 $devis = $stmt->fetchAll();
 
-// RECUPERATION DES MESSAGES
+// Récupération des messages laissés par les clients (hors devis)
 $sql_messages = "SELECT nom, prenom, email, message FROM clients
 WHERE message IS NOT NULL AND message !='' ORDER BY id DESC";
 $stmt_messages = $pdo->query($sql_messages);
@@ -36,6 +36,7 @@ $messages = $stmt_messages->fetchAll();
 </head>
 
     <h1 class="max-w-6xl mx-auto bg-[#134074] py-6 text-white text-4xl text-center  rounded-md font-semibold mt-10">Liste des devis</h1>
+    <!-- Tableau affichant la liste des devis -->
     <table class="table-auto w-full  border-collapse border border-gray-300 text-center mt-10 ">
       
         <thead class="bg-[#eef4ed]">
@@ -74,7 +75,10 @@ $messages = $stmt_messages->fetchAll();
         </tbody>
     </table>
 
+ <!-- Titre pour la section des messages -->
     <h2 class="max-w-6xl mx-auto bg-[#134074] py-6 text-white text-4xl text-center  rounded-md font-semibold mt-10">Messages Contacts</h2>
+
+    <!-- Tableau affichant les messages des clients -->
     <table class="table-auto w-full  border-collapse border border-gray-300 text-center mt-10 ">
         <thead class="bg-[#eef4ed]">
           <tr>
@@ -95,6 +99,8 @@ $messages = $stmt_messages->fetchAll();
                 <?php endforeach; ?>
         </tbody>
     </table>
+
+     <!-- Bouton de déconnexion -->
 <div class="mt-10">
     <a href="logout.php" class="btn-logout bg-[#134074] py-2 px-3  text-white rounded-md">Déconnexion</a>
 

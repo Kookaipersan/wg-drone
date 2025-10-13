@@ -11,12 +11,12 @@
     <!-- Police Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Ton CSS -->
-
+    
+    <!-- Inclusion du fichier CSS compilé Tailwind personnalisé -->
     <link rel="stylesheet" href="./src/css/output.css">
 
 </head>
-
+    <!-- Le body utilise flexbox en colonne avec une hauteur minimale de l'écran pour gérer un footer collé en bas -->
 <body class="flex flex-col min-h-screen">
     <header>
         <nav class="bg-[#134074] fixed top-0 w-full z-10 ">
@@ -77,12 +77,14 @@
 
         </nav>
     </header>
+     <!-- Section principale avec contenu variable, utilise flex-grow pour pousser le footer en bas -->
     <main class="flex-grow">
-
+     <!-- Contenu FAQ centré et limité en largeur -->
         <section class="max-w-6xl mx-auto p-6  pt-24 text-[#134074] font-semibold">
             <h1 class="text-3xl font-bold mb-6 py-6 text-center text-white bg-[#134074] rounded-md">Foire Aux Questions
                 (FAQ)</h1>
 
+     <!-- Chaque question est un bouton qui contrôle l'affichage de la réponse (accordéon) -->
             <div>
                 <button class="w-full text-left bg-gray-200 px-4 py-2 rounded-md focus:outline-none"
                     onclick="toggleAccordion(this)">
@@ -253,6 +255,7 @@
         </div>
 
     </footer>
+    <!-- Script JS pour gérer l'accordéon FAQ -->
      <script>
             function toggleAccordion(button) {
                 const content = button.nextElementSibling;
