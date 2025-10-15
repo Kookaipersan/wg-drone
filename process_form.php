@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php'; // inclure ta connexion PDO
+require_once 'db.php'; // inclure la connexion PDO
 
 // Récupérer et nettoyer les données POST
 $nom = trim($_POST['last-name'] ?? '');
